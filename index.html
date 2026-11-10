@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>YOUNESS ACCESSOIRES | Haute Joaillerie, Montres & Lunettes 3D</title>
+    <meta name="description" content="Boutique d'accessoires de luxe au Maroc: Lunettes de soleil de marque, Montres de prestige et Colliers/Chaînes élégantes pour femmes. Livraison partout au Maroc avec paiement à la livraison.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <div class="toast-icon-wrap">
+            <i class="fa-solid fa-check" id="toastIcon"></i>
+        </div>
+        <div class="toast-content">
+            <span class="toast-title" id="toastTitle">Produit Ajouté</span>
+            <span class="toast-msg" id="toastMsg">L'article a été ajouté avec succès à votre panier.</span>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-slider">
+            <span>✨ <strong>YOUNESS ACCESSOIRES</strong> : Livraison Gratuite partout au Maroc à partir de 300 DH !</span>
+            <span>💎 100% Paiement à la Livraison (Cash on Delivery)</span>
+            <span>🇲🇦 Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir & Toutes les villes</span>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Brand Logo -->
+            <a href="#" class="brand-logo">
+                <span class="logo-crown">👑</span>
+                <div class="logo-text">
+                    <span class="brand-name">YOUNESS</span>
+                    <span class="brand-sub">ACCESSOIRES • MAROC</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-links">
+                <a href="#hero" class="nav-link active">Accueil</a>
+                <a href="#categories" class="nav-link">Catégories</a>
+                <a href="#catalogue" class="nav-link">Catalogue</a>
+                <a href="#viewer3d" class="nav-link">Studio 3D</a>
+                <a href="#garanties" class="nav-link">Avantages</a>
+                <a href="#avis" class="nav-link">Avis Clients</a>
+            </nav>
+
+            <!-- Actions Header -->
+            <div class="nav-actions">
+                <a href="https://wa.me/212600000000?text=Salam%20Youness%20Accessoires,%20bghit%20nswel%203la%20les%20produits" target="_blank" class="btn-whatsapp-header" title="Contactez-nous sur WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span class="whatsapp-text">WhatsApp</span>
+                </a>
+
+                <button class="cart-trigger-btn" id="cartOpenBtn" aria-label="Voir le panier">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge" id="cartBadgeCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with 3D Canvas Showcase -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-container">
+            <div class="hero-text-content">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Collection Prestige 2026</span>
+                </div>
+                <h1 class="hero-title">
+                    L'Élégance <span class="gold-gradient-text">Sublime</span> Pour Homme & Femme
+                </h1>
+                <p class="hero-description">
+                    Découvrez l'univers exclusif de <strong>Youness Accessoires</strong> : Les plus belles 
+                    <em>Lunettes de soleil (Ndader)</em>, <em>Montres de luxe (Maganat)</em> et 
+                    <em>Colliers & Chaînes raffinées pour femmes (Snassel)</em>. Finition or & diamant de haute qualité.
+                </p>
+
+                <!-- Quick Stats / Highlights -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">+2500</span>
+                        <span class="stat-label">Clients Satisfaits</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/48h</span>
+                        <span class="stat-label">Livraison Express</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Paiement à la Réception</span>
+                    </div>
+                </div>
+
+                <div class="hero-cta-group">
+                    <a href="#catalogue" class="btn-gold-primary">
+                        <span>Explorer la Collection</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#viewer3d" class="btn-glass-secondary">
+                        <i class="fa-solid fa-cube"></i>
+                        <span>Studio 3D Interactif</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3D Interactive Hero Canvas -->
+            <div class="hero-3d-wrapper">
+                <div class="scene-card-3d">
+                    <div class="scene-header">
+                        <div class="model-badge">
+                            <i class="fa-solid fa-vr-cardboard"></i>
+                            <span id="activeModelLabel">Pendentif Or 24K</span>
+                        </div>
+                        <span class="drag-hint"><i class="fa-solid fa-arrows-up-down-left-right"></i> Glissez pour tourner</span>
+                    </div>
+                    
+                    <div id="hero3DCanvasContainer" class="hero-canvas-box">
+                        <!-- Canvas injected by Three.js -->
+                    </div>
+
+                    <!-- 3D Model Switcher Bar -->
+                    <div class="model-switcher-bar">
+                        <button class="switcher-btn active" data-model="necklace">
+                            <i class="fa-solid fa-gem"></i>
+                            <span>Snassel (Collier)</span>
+                        </button>
+                        <button class="switcher-btn" data-model="watch">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>Maganat (Montre)</span>
+                        </button>
+                        <button class="switcher-btn" data-model="glasses">
+                            <i class="fa-solid fa-glasses"></i>
+                            <span>Ndader (Lunettes)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Showcase Cards (Visual Emphasis on the 3 requested categories) -->
+    <section class="section-categories" id="categories">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-subtitle">UNIVERS DU LUXE</span>
+                <h2 class="section-title">Nos 3 Univers Exclusifs</h2>
+                <div class="title-gold-line"></div>
+                <p class="section-desc">Choisissez votre catégorie préférée pour un style irrésistible au quotidien.</p>
+            </div>
+
+            <div class="categories-grid">
+                <!-- 1. Snassel dyal deriyat (Necklaces & Chains) -->
+                <div class="category-card" onclick="filterCatalogue('snassel')">
+                    <div class="category-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&auto=format&fit=crop&q=80" alt="Snassel dyal deriyat - Colliers et Chaînes femme" class="category-img" loading="lazy">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <span class="cat-tag">Pour Elle</span>
+                        <h3 class="cat-name">Snassel Dyal Deriyat</h3>
+                        <p class="cat-details">Colliers plaqué or 18k, pendentifs cœurs, médaillons délicats & parures prestigieuses.</p>
+                        <div class="cat-action">
+                            <span>Voir la collection</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Ndader (Sunglasses) -->
+                <div class="category-card" onclick="filterCatalogue('ndader')">
+                    <div class="category-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&auto=format&fit=crop&q=80" alt="Ndader - Lunettes de soleil tendance" class="category-img" loading="lazy">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <span class="cat-tag">Tendance & UV400</span>
+                        <h3 class="cat-name">Ndader (Lunettes)</h3>
+                        <p class="cat-details">Modèles Aviator, Cat-Eye, verres polarisés haute protection et montures dorées chic.</p>
+                        <div class="cat-action">
+                            <span>Voir la collection</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Maganat (Watches) -->
+                <div class="category-card" onclick="filterCatalogue('maganat')">
+                    <div class="category-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&auto=format&fit=crop&q=80" alt="Maganat - Montres de luxe" class="category-img" loading="lazy">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <span class="cat-tag">Haute Précision</span>
+                        <h3 class="cat-name">Maganat (Montres)</h3>
+                        <p class="cat-details">Montres chronographes, cadrans saphir et mailles milanaises d'or et d'argent.</p>
+                        <div class="cat-action">
+                            <span>Voir la collection</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Products Catalogue -->
+    <section class="section-catalogue" id="catalogue">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-subtitle">BOUTIQUE OFFICIELLE</span>
+                <h2 class="section-title">Catalogue Youness Accessoires</h2>
+                <div class="title-gold-line"></div>
+                <p class="section-desc">Chaque pièce est sélectionnée avec un soin artisanal pour vous garantir un éclat sans pareil.</p>
+            </div>
+
+            <!-- Category Filters Tabs -->
+            <div class="filters-container">
+                <button class="filter-tab active" data-filter="all">
+                    <i class="fa-solid fa-border-all"></i> Tout Afficher
+                </button>
+                <button class="filter-tab" data-filter="snassel">
+                    <i class="fa-solid fa-gem"></i> Snassel (Colliers Femmes)
+                </button>
+                <button class="filter-tab" data-filter="ndader">
+                    <i class="fa-solid fa-glasses"></i> Ndader (Lunettes de soleil)
+                </button>
+                <button class="filter-tab" data-filter="maganat">
+                    <i class="fa-solid fa-clock"></i> Maganat (Montres de Luxe)
+                </button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Rendered dynamically by app.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Dedicated 3D Interactive Studio Section -->
+    <section class="section-viewer3d" id="viewer3d">
+        <div class="section-container">
+            <div class="viewer-glass-panel">
+                <div class="viewer-info-side">
+                    <span class="section-subtitle">EXPÉRIENCE IMMERSIVE</span>
+                    <h2 class="viewer-title">Inspectez nos Accessoires en 3D Temps Réel</h2>
+                    <p class="viewer-text">
+                        Grâce à notre moteur 3D Three.js, visualisez les finitions dorées, les reflets des verres solaires et le boîtier des montres sous tous les angles avant de commander.
+                    </p>
+
+                    <div class="feature-bullets">
+                        <div class="f-bullet">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <div>
+                                <h4>Or 18K & Verre Anti-Rayures</h4>
+                                <p>Rendu physique réaliste des métaux précieux et des optiques.</p>
+                            </div>
+                        </div>
+                        <div class="f-bullet">
+                            <i class="fa-solid fa-hand-pointer"></i>
+                            <div>
+                                <h4>Contrôle Interactif Complet</h4>
+                                <p>Pivotez, inclinez et inspectez chaque détail minutieux.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-order-3d-box">
+                        <div class="cur-price-label">
+                            <span class="label">Prix Spécial Web :</span>
+                            <span class="price-val" id="modelPriceTag">299 DH</span>
+                        </div>
+                        <button class="btn-gold-primary" id="order3DModelBtn">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <span>Commander ce Modèle 3D</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="viewer-interactive-side">
+                    <div class="viewer-canvas-header">
+                        <div class="status-live">
+                            <span class="dot-live"></span> Vue 3D HD
+                        </div>
+                        <div class="controls-quick-tools">
+                            <button class="tool-btn" id="toggleAutoRotateBtn" title="Activer / Désactiver la rotation">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                            </button>
+                            <button class="tool-btn" id="reset3DCameraBtn" title="Réinitialiser la caméra">
+                                <i class="fa-solid fa-compress"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="fullStudioCanvasContainer" class="studio-canvas-container">
+                        <!-- Studio Canvas injected here -->
+                    </div>
+
+                    <div class="studio-controls-bar">
+                        <button class="studio-select-btn active" data-studio="necklace">
+                            <i class="fa-solid fa-gem"></i> Collier Cœur Doré
+                        </button>
+                        <button class="studio-select-btn" data-studio="watch">
+                            <i class="fa-solid fa-clock"></i> Montre Royale Or
+                        </button>
+                        <button class="studio-select-btn" data-studio="glasses">
+                            <i class="fa-solid fa-glasses"></i> Lunettes Aviator Gold
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Moroccan Guarantees -->
+    <section class="section-garanties" id="garanties">
+        <div class="section-container">
+            <div class="garanties-grid">
+                <div class="garantie-box">
+                    <div class="g-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3>Livraison 24h / 48h</h3>
+                    <p>Expédition rapide et soignée dans toutes les villes du Maroc (Amana / Ghazala / Livreurs dédiés).</p>
+                </div>
+
+                <div class="garantie-box">
+                    <div class="g-icon">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3>Paiement à la Livraison</h3>
+                    <p>Payez uniquement après avoir reçu et inspecté votre colis en toute sérénité.</p>
+                </div>
+
+                <div class="garantie-box">
+                    <div class="g-icon">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3>Qualité Garantie</h3>
+                    <p>Accessoires inoxydables, résistants à l'eau et testés pour durer dans le temps.</p>
+                </div>
+
+                <div class="garantie-box">
+                    <div class="g-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3>Service Client 7j/7</h3>
+                    <p>Une équipe réactive à votre écoute sur WhatsApp pour vous conseiller et suivre vos commandes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section-avis" id="avis">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-subtitle">TÉMOIGNAGES</span>
+                <h2 class="section-title">Ce que disent nos clientes & clients</h2>
+                <div class="title-gold-line"></div>
+            </div>
+
+            <div class="reviews-slider">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Waslatni la chaîne d'or hier f Casablanca, wa3ra bezaaaf w qualité top! F l'emballage bhal les grandes marques. Choukran Youness!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <strong>Salma B.</strong>
+                            <span>Casablanca • Acheté Snassel Cœur</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Les lunettes aviator sont magnifiques, verres polarisés de qualité et monture solide. Service rapide, livré en 24h à Rabat."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">Y</div>
+                        <div class="author-info">
+                            <strong>Yassine M.</strong>
+                            <span>Rabat • Acheté Ndader Aviator</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"La montre or et noire est tout simplement incroyable au poignet. Trés satisfaite de mon achat, je recommande les yeux fermés."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">I</div>
+                        <div class="author-info">
+                            <strong>Imane K.</strong>
+                            <span>Marrakech • Acheté Montre Royale</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Drawer (Panier Latéral) -->
+    <div class="cart-drawer-overlay" id="cartOverlay">
+        <div class="cart-drawer" id="cartDrawer">
+            <div class="cart-drawer-header">
+                <div class="drawer-title-wrap">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <h3>Mon Panier</h3>
+                    <span class="drawer-item-count" id="drawerCount">(0)</span>
+                </div>
+                <button class="cart-close-btn" id="cartCloseBtn" aria-label="Fermer le panier">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Cart Items Container -->
+            <div class="cart-items-body" id="cartItemsContainer">
+                <!-- Dynamically populated or empty state -->
+            </div>
+
+            <!-- Cart Summary & Actions -->
+            <div class="cart-drawer-footer" id="cartFooter">
+                <div class="cart-summary-line">
+                    <span>Sous-total :</span>
+                    <span class="subtotal-val" id="cartSubtotal">0 DH</span>
+                </div>
+                <div class="cart-summary-line delivery-free">
+                    <span>Livraison :</span>
+                    <span class="delivery-status">GRATUITE (Partout au Maroc)</span>
+                </div>
+                <div class="cart-summary-total">
+                    <span>Total à Payer :</span>
+                    <span class="total-val" id="cartTotal">0 DH</span>
+                </div>
+
+                <div class="drawer-btns">
+                    <button class="btn-checkout-express" id="openCheckoutModalBtn">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                        <span>Commander (Paiement à la Livraison)</span>
+                    </button>
+                    <button class="btn-checkout-whatsapp" id="orderViaWhatsAppBtn">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Commander par WhatsApp Direct</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Checkout Modal (Adapté au Maroc) -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="closeCheckoutModalBtn" aria-label="Fermer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="modal-header">
+                <span class="crown-icon">👑</span>
+                <h2>Finaliser Votre Commande</h2>
+                <p>Remplissez vos coordonnées pour recevoir votre colis chez vous.</p>
+            </div>
+
+            <form id="orderForm" class="checkout-form">
+                <div class="form-group">
+                    <label for="clientName"><i class="fa-solid fa-user"></i> Nom & Prénom *</label>
+                    <input type="text" id="clientName" required placeholder="Ex: Mohammed Alami / Sara Bennani">
+                </div>
+
+                <div class="form-group">
+                    <label for="clientPhone"><i class="fa-solid fa-phone"></i> Numéro de Téléphone (WhatsApp) *</label>
+                    <input type="tel" id="clientPhone" required placeholder="Ex: 06 12 34 56 78">
+                </div>
+
+                <div class="form-group">
+                    <label for="clientCity"><i class="fa-solid fa-city"></i> Ville *</label>
+                    <select id="clientCity" required>
+                        <option value="" disabled selected>Sélectionnez votre ville</option>
+                        <option value="Casablanca">Casablanca</option>
+                        <option value="Rabat">Rabat</option>
+                        <option value="Marrakech">Marrakech</option>
+                        <option value="Tanger">Tanger</option>
+                        <option value="Fès">Fès</option>
+                        <option value="Agadir">Agadir</option>
+                        <option value="Meknès">Meknès</option>
+                        <option value="Oujda">Oujda</option>
+                        <option value="Kénitra">Kénitra</option>
+                        <option value="Tétouan">Tétouan</option>
+                        <option value="Safi">Safi</option>
+                        <option value="El Jadida">El Jadida</option>
+                        <option value="Autre Ville">Autre ville au Maroc</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="clientAddress"><i class="fa-solid fa-map-location-dot"></i> Adresse de livraison *</label>
+                    <input type="text" id="clientAddress" required placeholder="Ex: Quartier Maarif, Rue 12, N° 45">
+                </div>
+
+                <!-- Order Recap inside modal -->
+                <div class="modal-order-summary">
+                    <div class="summary-line">
+                        <span>Articles :</span>
+                        <span id="modalArticlesCount">0 article(s)</span>
+                    </div>
+                    <div class="summary-line total">
+                        <span>Montant Total :</span>
+                        <span id="modalOrderTotal" class="gold-amount">0 DH</span>
+                    </div>
+                    <div class="cod-pill">
+                        <i class="fa-solid fa-money-bill-wave"></i> Paiement en espèces à la livraison
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-gold-primary w-100 modal-submit">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Valider la Commande Maintenant</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Success Modal -->
+    <div class="modal-overlay" id="orderSuccessModal">
+        <div class="modal-card success-card">
+            <div class="success-icon-wrap">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2 class="modal-title">Commande Confirmée !</h2>
+            <p class="success-code">RÉFÉRENCE : <span id="successOrderRef">#YN-7749</span></p>
+            <p class="modal-desc">
+                Choukran bzaf 3la ti9tek f <strong>Youness Accessoires</strong> ! Notre équipe commerciale va vous appeler ou vous envoyer un message WhatsApp sous peu pour confirmer l'expédition.
+            </p>
+            <div class="order-recap-box" id="successOrderRecap"></div>
+            <button class="btn-gold-primary" id="successHomeBtn">Continuer vos achats</button>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Quick Button -->
+    <a href="https://wa.me/212600000000?text=Salam%20Youness%20Accessoires,%20bghit%20nswel%203la%20chi%20accessoire" target="_blank" class="floating-whatsapp-btn" title="Contactez Youness sur WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="floating-label">WhatsApp Direct</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="crown">👑</span>
+                        <span>YOUNESS ACCESSOIRES</span>
+                    </div>
+                    <p class="footer-bio">
+                        La destination numéro 1 au Maroc pour vos accessoires de mode haut de gamme. Snassel dyal deriyat, Ndader de marque et Maganat de prestige.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/212600000000" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="#catalogue" onclick="filterCatalogue('snassel')">Snassel Dyal Deriyat (Colliers)</a></li>
+                        <li><a href="#catalogue" onclick="filterCatalogue('ndader')">Ndader (Lunettes de soleil)</a></li>
+                        <li><a href="#catalogue" onclick="filterCatalogue('maganat')">Maganat (Montres de Luxe)</a></li>
+                        <li><a href="#viewer3d">Studio 3D Temps Réel</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Assistance & Service</h4>
+                    <ul>
+                        <li><a href="#garanties">Conditions de Livraison</a></li>
+                        <li><a href="#garanties">Paiement à la Livraison</a></li>
+                        <li><a href="#garanties">Garantie & Retours</a></li>
+                        <li><a href="https://wa.me/212600000000">Suivi de commande WhatsApp</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Contact & Showroom</h4>
+                    <ul class="contact-info-list">
+                        <li><i class="fa-solid fa-location-dot"></i> Casablanca, Maroc</li>
+                        <li><i class="fa-solid fa-phone"></i> +212 6 00 00 00 00</li>
+                        <li><i class="fa-solid fa-envelope"></i> contact@youness-accessoires.ma</li>
+                        <li><i class="fa-solid fa-clock"></i> 7j/7 : 09:00 - 22:00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>YOUNESS ACCESSOIRES</strong>. Tous droits réservés. Conçu avec Three.js & Passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- OrbitControls -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- GSAP for Smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Main Application JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
